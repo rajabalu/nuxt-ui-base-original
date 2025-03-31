@@ -24,10 +24,10 @@
     "nuxt": "3.13.1",
     "pinia": "^2.2.2",
     "sass": "1.77.6",
-    "vuetify": "^3.7.1",
-    "@nuxtjs/i18n": "^9.0.0"
+    "vuetify": "^3.7.1"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^9.4.0",
     "@pinia/nuxt": "^0.5.4",
     "@vueuse/core": "^11.0.3",
     "@vueuse/nuxt": "^11.0.3",

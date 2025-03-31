@@ -130,19 +130,21 @@ export default defineNuxtConfig({
     },
   ],
   i18n: {
-    locales: [
-      { code: 'en', iso: 'en-US', name: 'English', file: 'en.ts' },
-      { code: 'fr', iso: 'fr-FR', name: 'Français', file: 'fr.ts' },
-      { code: 'es', iso: 'es-ES', name: 'Español', file: 'es.ts' }
-    ],
-    lazy: true,
-    langDir: 'locales',
-    defaultLocale: 'en',
     strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'es'],
+    vueI18n: './i18n.config.ts',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
+    },
+    bundle: {
+      compositionOnly: true,
+      runtimeOnly: false,
+      fullInstall: true,
+      dropMessageCompiler: false,
+      optimizeTranslationDirective: false
     }
   },
   pwa: {
