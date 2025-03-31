@@ -115,6 +115,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@vueuse/nuxt",
     "@vite-pwa/nuxt",
+    "@nuxtjs/i18n",
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
         config.plugins ||= [];
@@ -128,7 +129,22 @@ export default defineNuxtConfig({
       });
     },
   ],
-
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en.ts' },
+      { code: 'fr', iso: 'fr-FR', name: 'Français', file: 'fr.ts' },
+      { code: 'es', iso: 'es-ES', name: 'Español', file: 'es.ts' }
+    ],
+    lazy: true,
+    langDir: 'locales',
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
   pwa: {
     registerType: "autoUpdate",
     manifest: {
